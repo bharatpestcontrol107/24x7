@@ -86,7 +86,7 @@ export async function POST(request: Request) {
 		await transporter.sendMail({
 			from: `${fromName} <${smtpUser}>`,
 			to: toEmail,
-			replyTo: trimmed.email,
+			replyTo: smtpUser,
 			subject: `New Service Request - 24x7 Repair Services`,
 			text: [
 				`Name: ${trimmed.fullName}`,
