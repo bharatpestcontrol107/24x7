@@ -18,7 +18,9 @@ export default function Brands() {
 	const scrollBrands = [...brands, ...brands];
 
 	return (
-		<section className="w-full py-16 bg-white overflow-hidden antialiased">
+		<section
+			id="brands"
+			className="w-full py-16 bg-white overflow-hidden antialiased">
 			<style>{`
         @keyframes scroll-x {
           from {
@@ -42,10 +44,9 @@ export default function Brands() {
 					We Repair All Major <span className="text-[#ca2929]">Brands</span>
 				</h2>
 				<p className="text-gray-700 text-center mt-4 max-w-2xl mx-auto">
-					We provide repair services for a wide range of home
-					appliance brands. Our technicians are experienced in repairing washing
-					machines, ACs, refrigerators, and other household appliances across
-					popular brands.
+					We provide repair services for a wide range of home appliance brands.
+					Our technicians are experienced in repairing washing machines, ACs,
+					refrigerators, and other household appliances across popular brands.
 				</p>
 			</div>
 

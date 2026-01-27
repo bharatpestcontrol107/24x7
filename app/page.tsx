@@ -8,6 +8,7 @@ import {
 	Contact,
 	Footer,
 } from "@/components";
+import StickyCallBar from "@/components/StickyCallBar";
 
 export default function Home() {
 	return (
@@ -20,6 +21,7 @@ export default function Home() {
 			<Statistics />
 			<Contact />
 			<Footer />
+			<StickyCallBar />
 		</div>
 	);
 }

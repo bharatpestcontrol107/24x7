@@ -31,13 +31,13 @@ export default function HeroSection() {
 			<div className="relative z-10 flex flex-col items-center justify-center h-full">
 				{/* Main Heading */}
 				<div className="text-center mb-8">
-					<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-2">
+					<p className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-2">
 						WE ARE HERE
-					</h1>
-					<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
+					</p>
+					<p className="text-4xl sm:text-5xl lg:text-6xl font-bold">
 						<span className="text-[#ca2929]">ALWAYS</span>{" "}
 						<span className="text-white">FOR YOU</span>
-					</h1>
+					</p>
 				</div>
 
 				{/* Description */}

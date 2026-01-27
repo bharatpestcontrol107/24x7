@@ -2,6 +2,7 @@
 
 import { Wrench, Zap, Users, IndianRupee } from "lucide-react";
 import { COMPANY_INFO } from "@/lib/constants";
+import Image from "next/image";
 
 export default function About() {
 	const features = [
@@ -138,10 +139,12 @@ export default function About() {
 					<div className="animate-fade-in-left">
 						<div className="relative">
 							<div className="absolute inset-0 bg-linear-to-r from-red-400 to-[#ca2929] transform rotate-3"></div>
-							<img
-								src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=compress&cs=tinysrgb&w=800"
+							<Image
+								src="/images/about_us.png"
 								alt="Appliance Repair"
 								className="relative w-full h-80 object-cover shadow-xl"
+								height={320}
+								width={480}
 							/>
 						</div>
 					</div>
