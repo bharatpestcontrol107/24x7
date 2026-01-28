@@ -38,7 +38,7 @@ export default function Navbar() {
 
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				{/* Mobile Layout */}
-				<div className="lg:hidden py-4">
+				<div className="lg:hidden py-4 animate-fade-in">
 					<div className="flex items-center gap-4 mb-4">
 						<Image src={logo} alt="Logo" width={40} height={40} />
 						<div className="text-xl font-extrabold text-[#ca2929]">
@@ -48,7 +48,7 @@ export default function Navbar() {
 				</div>
 
 				{/* Desktop Layout */}
-				<div className="hidden lg:block">
+				<div className="hidden lg:block animate-fade-in">
 					<div className="flex items-center justify-between py-4 text-xs text-white/90">
 						<div className="flex items-center gap-4">
 							<Image src={logo} alt="Logo" width={40} height={40} />

@@ -30,7 +30,7 @@ export default function HeroSection() {
 			{/* Content Container */}
 			<div className="relative z-10 flex flex-col items-center justify-center h-full">
 				{/* Main Heading */}
-				<div className="text-center mb-8">
+				<div className="text-center mb-8 animate-fade-in-up">
 					<p className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-2">
 						WE ARE HERE
 					</p>
@@ -41,7 +41,7 @@ export default function HeroSection() {
 				</div>
 
 				{/* Description */}
-				<p className="text-white text-center max-w-2xl text-sm sm:text-base lg:text-lg leading-relaxed mb-10">
+				<p className="text-white text-center max-w-2xl text-sm sm:text-base lg:text-lg leading-relaxed mb-10 animate-fade-in-up delay-200">
 					We offer quick and affordable repair services for washing machines,
 					refrigerators, air conditioners, ovens, and more. Our skilled
 					technicians provide doorstep service with honest pricing and quality
@@ -49,7 +49,7 @@ export default function HeroSection() {
 				</p>
 
 				{/* CTA Buttons */}
-				<div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+				<div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate-fade-in-up delay-300">
 					<Link
 						href={`tel:${COMPANY_INFO.phone}`}
 						className="bg-[#ca2929] hover:bg-red-700 text-white px-8 py-3 font-bold transition-colors duration-200 text-center">

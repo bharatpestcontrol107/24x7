@@ -46,7 +46,7 @@ export const SITE_METADATA = {
 // Copyright
 export const COPYRIGHT = {
 	year: new Date().getFullYear(),
-	text: "Home appliance repair service center | All rights reserved.",
+	text: " All rights reserved.",
 	disclaimer:
 		"We are Not Authorised Service Centre. we provide private services and we deal only in Out of warranty cases. This Website and Domain Name has No Relation With Any Company.",
 };

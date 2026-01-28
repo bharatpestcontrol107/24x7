@@ -5,14 +5,37 @@ import Image from "next/image";
 import logo from "../public/favicon.png";
 import { COMPANY_INFO, COPYRIGHT } from "@/lib/constants";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 export default function Footer() {
+	const [isVisible, setIsVisible] = useState(false);
+	const footerRef = useRef<HTMLElement>(null);
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						setIsVisible(true);
+					}
+				});
+			},
+			{ threshold: 0.1 }
+		);
+
+		if (footerRef.current) {
+			observer.observe(footerRef.current);
+		}
+
+		return () => observer.disconnect();
+	}, []);
+
 	return (
-		<footer className="bg-slate-800 text-white pb-16">
+		<footer className="bg-slate-800 text-white pb-16" ref={footerRef}>
 			<div className="max-w-7xl mx-auto px-6 py-16">
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 					{/* Left - Logo and Description */}
-					<div>
+					<div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
 						<div className="flex items-center gap-4 mb-6">
 							<Image src={logo} alt="Logo" width={50} height={50} />
 							<h2 className="text-2xl font-extrabold text-white leading-tight">
@@ -25,7 +48,7 @@ export default function Footer() {
 					</div>
 
 					{/* Quick Links */}
-					<div>
+					<div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: isVisible ? '100ms' : '0ms' }}>
 						<h3 className="text-xl font-bold mb-6">Quick Links</h3>
 						<ul className="space-y-3">
 							<li>
@@ -67,7 +90,7 @@ export default function Footer() {
 					</div>
 
 					{/* Our Services */}
-					<div>
+					<div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: isVisible ? '200ms' : '0ms' }}>
 						<h3 className="text-xl font-bold mb-6">Our Services</h3>
 						<ul className="space-y-3">
 							{COMPANY_INFO.services.map((service) => (
@@ -79,7 +102,7 @@ export default function Footer() {
 					</div>
 
 					{/* Book a Service */}
-					<div>
+					<div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: isVisible ? '300ms' : '0ms' }}>
 						<h3 className="text-xl font-bold mb-6">Book a Service</h3>
 						<p className="text-gray-400 text-sm mb-6 leading-relaxed">
 							Experience hassle-free appliance repair services with our expert
@@ -120,10 +143,10 @@ export default function Footer() {
 			</div>
 
 			{/* Bottom Copyright Section */}
-			<div className="border-t border-gray-700">
+			<div className={`border-t border-gray-700 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: isVisible ? '500ms' : '0ms' }}>
 				<div className="max-w-7xl mx-auto px-6 py-6">
 					<p className="text-center text-gray-400 text-sm mb-2">
-						Copyright © {COPYRIGHT.year} | {COPYRIGHT.text}
+						Copyright © {COPYRIGHT.year} | {COMPANY_INFO.name} | {COPYRIGHT.text}
 					</p>
 					<p className="text-center text-red-500 text-xs">
 						Disclaimer - {COPYRIGHT.disclaimer}

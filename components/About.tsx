@@ -3,8 +3,30 @@
 import { Wrench, Zap, Users, IndianRupee } from "lucide-react";
 import { COMPANY_INFO } from "@/lib/constants";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 export default function About() {
+	const [isVisible, setIsVisible] = useState(false);
+	const sectionRef = useRef<HTMLElement>(null);
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						setIsVisible(true);
+					}
+				});
+			},
+			{ threshold: 0.1 }
+		);
+
+		if (sectionRef.current) {
+			observer.observe(sectionRef.current);
+		}
+
+		return () => observer.disconnect();
+	}, []);
 	const features = [
 		{
 			icon: Wrench,
@@ -33,7 +55,7 @@ export default function About() {
 	const services = COMPANY_INFO.services;
 
 	return (
-		<section id="about" className="py-20">
+		<section id="about" className="py-20" ref={sectionRef}>
 			<style>{`
         @keyframes fadeInUp {
           from {

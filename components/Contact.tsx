@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useMemo, useState, useEffect, useRef } from "react";
 import toast from "react-hot-toast";
 import { COMPANY_INFO } from "@/lib/constants";
 
@@ -33,6 +33,9 @@ const productAgeOptions = [
 ];
 
 export default function Contact() {
+	const [isVisible, setIsVisible] = useState(false);
+	const sectionRef = useRef<HTMLElement>(null);
+
 	const initialForm: FormState = useMemo(
 		() => ({
 			fullName: "",
@@ -51,6 +54,25 @@ export default function Contact() {
 		Partial<Record<keyof FormState, string>>
 	>({});
 	const [submitting, setSubmitting] = useState(false);
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						setIsVisible(true);
+					}
+				});
+			},
+			{ threshold: 0.1 }
+		);
+
+		if (sectionRef.current) {
+			observer.observe(sectionRef.current);
+		}
+
+		return () => observer.disconnect();
+	}, []);
 
 	const validate = (state: FormState) => {
 		const nextErrors: Partial<Record<keyof FormState, string>> = {};
@@ -112,11 +134,11 @@ export default function Contact() {
 	};
 
 	return (
-		<section id="contact" className="w-full py-20">
+		<section id="contact" className="w-full py-20" ref={sectionRef}>
 			<div className="mx-auto max-w-7xl px-6">
 				<div className="grid lg:grid-cols-[40%_60%] gap-8">
 					{/* Left - Contact Information */}
-					<div className="bg-gray-100 p-10 flex flex-col">
+					<div className={`bg-gray-100 p-10 flex flex-col transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
 						{/* Header */}
 						<div className="mb-10">
 							<div className="w-14 h-14 bg-[#ca2929] flex items-center justify-center mb-6 rounded-full">
@@ -260,7 +282,7 @@ export default function Contact() {
 					</div>
 
 					{/* Right - Contact Form */}
-					<div className="bg-white p-10">
+					<div className={`bg-white p-10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: isVisible ? '200ms' : '0ms' }}>
 						{/* Header */}
 						<div className="mb-8">
 							<div className="flex items-center gap-2 text-gray-700 mb-3">
