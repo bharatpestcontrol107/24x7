@@ -14,15 +14,6 @@ type FormState = {
 	pincode: string;
 };
 
-const services = [
-	"Washing Machine Repair",
-	"AC & Cooling Service",
-	"Refrigerator Repair",
-	"Microwave & Oven Repair",
-	"Water Heater Service",
-	"Other Services",
-];
-
 const productAgeOptions = [
 	"1 Month to 12 Months",
 	"1 Years to 2 Years",
@@ -41,7 +32,7 @@ export default function Contact() {
 			fullName: "",
 			phone: "",
 			alternatePhone: "",
-			service: services[0],
+			service: COMPANY_INFO.services[0],
 			productOld: productAgeOptions[0],
 			address: "",
 			pincode: "",
@@ -330,7 +321,7 @@ export default function Contact() {
 							</div>
 
 							{/* Phone & Alternate Phone */}
-							<div className="grid grid-cols-2 gap-4">
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 								<div>
 									<label className="block text-sm font-semibold text-gray-900 mb-2">
 										Phone
@@ -376,7 +367,7 @@ export default function Contact() {
 							</div>
 
 							{/* Service & Product Age */}
-							<div className="grid grid-cols-2 gap-4">
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 								<div>
 									<label className="block text-sm font-semibold text-gray-900 mb-2">
 										Service
@@ -386,7 +377,7 @@ export default function Contact() {
 											value={form.service}
 											onChange={(e) => handleChange("service", e.target.value)}
 											className={`w-full px-4 py-2 border bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#ca2929]/20 focus:border-[#ca2929] transition-all appearance-none cursor-pointer ${errors.service ? "border-red-500" : "border-gray-300"}`}>
-											{services.map((item) => (
+											{COMPANY_INFO.services.map((item) => (
 												<option key={item}>{item}</option>
 											))}
 										</select>
@@ -450,7 +441,7 @@ export default function Contact() {
 							</div>
 
 							{/* Address & Pincode */}
-							<div className="grid grid-cols-2 gap-4">
+						<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 								<div>
 									<label className="block text-sm font-semibold text-gray-900 mb-2">
 										Address
