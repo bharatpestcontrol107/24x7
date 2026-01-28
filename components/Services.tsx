@@ -64,7 +64,7 @@ export default function Services() {
 				<h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
 					Services We <span className="text-[#ca2929]">Provide</span>
 				</h2>
-				<p className="mt-4 text-sm md:text-base text-slate-600 max-w-3xl mx-auto text-center">
+				<p className="mt-4 text-lg text-slate-600 max-w-3xl mx-auto text-center">
 					We offer reliable doorstep repair services for wide variety of home
 					appliances. Our skilled technicians provide quick and efficient
 					repairs to keep your home appliances working smoothly.

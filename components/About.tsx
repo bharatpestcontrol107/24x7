@@ -119,14 +119,14 @@ export default function About() {
 
 			<div className="container mx-auto px-4">
 				<div className="text-center mb-16 animate-fade-in-up">
-					<h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+					<h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
 						About{" "}
 						<span className="text-[#ca2929]">
 							{COMPANY_INFO.name.toUpperCase()}
 						</span>
 					</h2>
 					<div className="w-24 h-1 bg-red-500 mx-auto mb-8"></div>
-					<p className="text-xl text-gray-600 max-w-5xl mx-auto leading-relaxed">
+					<p className="text-lg text-gray-600 max-w-5xl mx-auto leading-relaxed">
 						{COMPANY_INFO.name} provides reliable home appliance repair services
 						with convenient doorstep support. We repair all major household
 						appliances and focus on quick fault detection, quality replacement

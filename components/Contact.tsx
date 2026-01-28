@@ -307,46 +307,48 @@ export default function Contact() {
 								)}
 							</div>
 
-{/* Phone & Alternate Phone */}
-								<div className="grid grid-cols-2 gap-4">
-									<div>
-										<label className="block text-sm font-semibold text-gray-900 mb-2">
-											Phone
-										</label>
-										<input
-											type="tel"
-											placeholder="Phone"
-											inputMode="numeric"
-											maxLength={10}
-											value={form.phone}
-											onChange={(e) => {
-												const onlyNumbers = e.target.value.replace(/\D/g, "");
-												handleChange("phone", onlyNumbers.slice(0, 10));
-											}}
-											className={`w-full px-4 py-2 border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ca2929]/20 focus:border-[#ca2929] transition-all ${errors.phone ? "border-red-500" : "border-gray-300"}`}
-										/>
-										{errors.phone && (
-											<p className="text-red-600 text-xs mt-1">{errors.phone}</p>
-										)}
-									</div>
-									<div>
-										<label className="block text-sm font-semibold text-gray-900 mb-2">
-											Alternate Phone
-										</label>
-										<input
-											type="tel"
-											placeholder="Alternate Phone (Optional)"
-											inputMode="numeric"
-											maxLength={10}
-											value={form.alternatePhone}
-											onChange={(e) => {
-												const onlyNumbers = e.target.value.replace(/\D/g, "");
-												handleChange("alternatePhone", onlyNumbers.slice(0, 10));
-											}}
-											className={`w-full px-4 py-2 border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ca2929]/20 focus:border-[#ca2929] transition-all ${errors.alternatePhone ? "border-red-500" : "border-gray-300"}`}
-										/>
-										{errors.alternatePhone && (
-											<p className="text-red-600 text-xs mt-1">{errors.alternatePhone}</p>
+							{/* Phone & Alternate Phone */}
+							<div className="grid grid-cols-2 gap-4">
+								<div>
+									<label className="block text-sm font-semibold text-gray-900 mb-2">
+										Phone
+									</label>
+									<input
+										type="tel"
+										placeholder="Phone"
+										inputMode="numeric"
+										maxLength={10}
+										value={form.phone}
+										onChange={(e) => {
+											const onlyNumbers = e.target.value.replace(/\D/g, "");
+											handleChange("phone", onlyNumbers.slice(0, 10));
+										}}
+										className={`w-full px-4 py-2 border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ca2929]/20 focus:border-[#ca2929] transition-all ${errors.phone ? "border-red-500" : "border-gray-300"}`}
+									/>
+									{errors.phone && (
+										<p className="text-red-600 text-xs mt-1">{errors.phone}</p>
+									)}
+								</div>
+								<div>
+									<label className="block text-sm font-semibold text-gray-900 mb-2">
+										Alternate Phone
+									</label>
+									<input
+										type="tel"
+										placeholder="Alternate Phone (Optional)"
+										inputMode="numeric"
+										maxLength={10}
+										value={form.alternatePhone}
+										onChange={(e) => {
+											const onlyNumbers = e.target.value.replace(/\D/g, "");
+											handleChange("alternatePhone", onlyNumbers.slice(0, 10));
+										}}
+										className={`w-full px-4 py-2 border bg-white text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#ca2929]/20 focus:border-[#ca2929] transition-all ${errors.alternatePhone ? "border-red-500" : "border-gray-300"}`}
+									/>
+									{errors.alternatePhone && (
+										<p className="text-red-600 text-xs mt-1">
+											{errors.alternatePhone}
+										</p>
 									)}
 								</div>
 							</div>

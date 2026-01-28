@@ -6,9 +6,15 @@ export default function Brands() {
 		"Samsung",
 		"Whirlpool",
 		"Voltas",
+		"Onida",
+		"O-General",
 		"Godrej",
 		"IFB",
 		"Bosch",
+		"Philips",
+		"Siemens",
+		"Hitachi",
+		"Blue Star",
 		"Haier",
 		"Daikin",
 		"Carrier",
@@ -40,10 +46,10 @@ export default function Brands() {
       `}</style>
 
 			<div className="max-w-7xl mx-auto px-6 mb-10">
-				<h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center">
+				<h2 className="text-3xl md:text-5xl font-bold text-gray-900 text-center">
 					We Repair All Major <span className="text-[#ca2929]">Brands</span>
 				</h2>
-				<p className="text-gray-700 text-center mt-4 max-w-2xl mx-auto">
+				<p className="text-lg text-gray-700 text-center mt-4 max-w-2xl mx-auto">
 					We provide repair services for a wide range of home appliance brands.
 					Our technicians are experienced in repairing washing machines, ACs,
 					refrigerators, and other household appliances across popular brands.

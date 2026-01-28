@@ -1,6 +1,6 @@
 "use client";
 
-import { Phone } from "lucide-react";
+import { Phone, Mail, Clock } from "lucide-react";
 import Image from "next/image";
 import logo from "../public/favicon.png";
 import { COMPANY_INFO, COPYRIGHT } from "@/lib/constants";
@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function Footer() {
 	return (
-		<footer className="bg-slate-800 text-white">
+		<footer className="bg-slate-800 text-white pb-16">
 			<div className="max-w-7xl mx-auto px-6 py-16">
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 					{/* Left - Logo and Description */}
@@ -78,24 +78,43 @@ export default function Footer() {
 						</ul>
 					</div>
 
-					{/* Have a Question */}
+					{/* Book a Service */}
 					<div>
-						<h3 className="text-xl font-bold mb-6">Have a Question?</h3>
-						<div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mb-4">
-							<Phone className="text-slate-800" size={28} />
-						</div>
-						<p className="text-lg font-semibold mb-4">Call Us 24/7</p>
-						<a
-							href={`tel:${COMPANY_INFO.phone}`}
-							className="text-3xl font-bold text-[#ca2929] hover:text-red-700 transition-colors block mb-6">
-							{COMPANY_INFO.phone}
-						</a>
-						<p className="text-gray-300 text-sm mb-2">
-							<span className="font-semibold">
-								{COMPANY_INFO.hours.display}
-							</span>
+						<h3 className="text-xl font-bold mb-6">Book a Service</h3>
+						<p className="text-gray-400 text-sm mb-6 leading-relaxed">
+							Experience hassle-free appliance repair services with our expert
+							technicians.
 						</p>
-						<p className="text-gray-400 text-xs">{COMPANY_INFO.hours.note}</p>
+
+						<div className="space-y-4">
+							<a
+								href={`tel:${COMPANY_INFO.phone}`}
+								className="flex items-center gap-4 group bg-slate-700/50 p-4 rounded-xl hover:bg-slate-700 transition-all border border-slate-600 hover:border-red-500/50 shadow-sm hover:shadow-md">
+								<div className="bg-red-600 rounded-full w-12 h-12 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-lg shadow-red-900/20">
+									<Phone className="text-white fill-white" size={24} />
+								</div>
+								<div>
+									<p className="text-xs text-gray-400 uppercase tracking-wider font-bold mb-0.5">
+										Call Us On
+									</p>
+									<p className="text-xl font-extrabold text-white group-hover:text-red-400 transition-colors">
+										{COMPANY_INFO.phoneDisplay}
+									</p>
+								</div>
+							</a>
+
+							<div className="flex items-start gap-3 mt-6">
+								<Clock className="text-red-500 mt-0.5 shrink-0" size={18} />
+								<div>
+									<p className="text-sm text-gray-300 font-medium mb-1">
+										{COMPANY_INFO.hours.display}
+									</p>
+									<p className="text-xs text-gray-500 leading-tight">
+										{COMPANY_INFO.hours.note}
+									</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -101,11 +101,11 @@ export default function Statistics() {
 
 			<div className="relative z-10 container mx-auto px-4">
 				<div className="stats-heading text-center mb-16">
-					<h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+					<h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
 						Our <span className="text-red-500">Achievements</span>
 					</h2>
 					<div className="w-24 h-1 bg-red-500 mx-auto mb-8"></div>
-					<p className="text-xl text-gray-200 max-w-3xl mx-auto">
+					<p className="text-lg text-gray-200 max-w-3xl mx-auto">
 						Trusted by thousands of customers for reliable appliance repair
 						services
 					</p>
@@ -117,7 +117,7 @@ export default function Statistics() {
 							key={stat.label}
 							className="stat-card bg-white/10 backdrop-blur-md rounded-xl p-8"
 							style={{ animationDelay: `${index * 0.1}s` }}>
-							<div className="text-5xl md:text-6xl font-bold text-red-500 mb-4">
+							<div className="text-3xl md:text-5xl font-bold text-red-500 mb-4">
 								{counts[index].toLocaleString()}
 								{stat.suffix}
 							</div>
