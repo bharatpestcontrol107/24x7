@@ -31,8 +31,19 @@ export default function Footer() {
 	}, []);
 
 	return (
-		<footer className="bg-slate-800 text-white pb-16" ref={footerRef}>
-			<div className="max-w-7xl mx-auto px-6 py-16">
+		<footer className="bg-slate-800 text-white pb-16 relative overflow-hidden" ref={footerRef}>
+			{/* Background */}
+			<div className="absolute inset-0">
+				<div
+					className="w-full h-full bg-cover bg-center bg-fixed"
+					style={{
+						backgroundImage: `url('/images/statistics_bg.png')`,
+					}}
+				/>
+				<div className="absolute inset-0 bg-gray-900/80"></div>
+			</div>
+
+			<div className="max-w-7xl mx-auto px-6 py-16 relative z-10">
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 					{/* Left - Logo and Description */}
 					<div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -143,7 +154,7 @@ export default function Footer() {
 			</div>
 
 			{/* Bottom Copyright Section */}
-			<div className={`border-t border-gray-700 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: isVisible ? '500ms' : '0ms' }}>
+			<div className={`border-t border-gray-700 transition-all duration-700 relative z-10 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: isVisible ? '500ms' : '0ms' }}>
 				<div className="max-w-7xl mx-auto px-6 py-6">
 					<p className="text-center text-gray-400 text-sm mb-2">
 						Copyright © {COPYRIGHT.year} | {COMPANY_INFO.name} | {COPYRIGHT.text}
