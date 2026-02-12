@@ -10,7 +10,7 @@ export default function HeroSection() {
 	return (
 		<section
 			id="top"
-			className="relative w-full h-[85vh] bg-slate-600 overflow-hidden">
+			className="relative w-full h-[65vh] md:h-[80vh] bg-slate-600 overflow-hidden">
 			{/* Background Image */}
 			<Image
 				src={banner}
@@ -30,34 +30,32 @@ export default function HeroSection() {
 			{/* Content Container */}
 			<div className="relative z-10 flex flex-col items-center justify-center h-full">
 				{/* Main Heading */}
-				<div className="text-center mb-8">
-					<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-2">
+				<div className="text-center mb-8 animate-fade-in-up">
+					<p className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-2">
 						WE ARE HERE
-					</h1>
-					<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
+					</p>
+					<p className="text-4xl sm:text-5xl lg:text-6xl font-bold">
 						<span className="text-[#ca2929]">ALWAYS</span>{" "}
 						<span className="text-white">FOR YOU</span>
-					</h1>
+					</p>
 				</div>
 
 				{/* Description */}
-				<p className="text-white text-center max-w-2xl text-sm sm:text-base lg:text-lg leading-relaxed mb-10">
-					We offer quick and affordable repair services for washing machines,
-					refrigerators, air conditioners, ovens, and more. Our skilled
-					technicians provide doorstep service with honest pricing and quality
-					repairs you can trust.
+				<p className="text-white text-center max-w-2xl text-sm sm:text-base lg:text-lg font-semibold leading-relaxed px-8 mb-10 animate-fade-in-up delay-200">
+					Fast, affordable repairs for washing machines, refrigerators, ACs and
+					more with doorstep service and honest pricing.
 				</p>
 
 				{/* CTA Buttons */}
-				<div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+				<div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate-fade-in-up delay-300">
 					<Link
 						href={`tel:${COMPANY_INFO.phone}`}
 						className="bg-[#ca2929] hover:bg-red-700 text-white px-8 py-3 font-bold transition-colors duration-200 text-center">
-						Call for Service
+						Call: {COMPANY_INFO.phoneDisplay}
 					</Link>
 					<Link
 						href="#contact"
-						className="border-2 border-white text-white hover:bg-white hover:text-slate-600 px-8 py-3 font-bold transition-colors duration-200 text-center">
+						className="border-2 border-white bg-white text-slate-600 hover:bg-transparent hover:text-white px-8 py-3 font-bold transition-colors duration-200 text-center">
 						Request a Quote
 					</Link>
 				</div>

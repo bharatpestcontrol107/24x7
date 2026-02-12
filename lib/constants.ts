@@ -40,13 +40,13 @@ export const SITE_METADATA = {
 	description:
 		"Reliable 24/7 home appliance repair and maintenance. Same-day visits, genuine parts, and transparent pricing to keep every device running smoothly.",
 	keywords:
-		"appliance repair, washing machine repair, AC repair, refrigerator repair, 24/7 service",
+		"home appliance repair, washing machine repair, AC repair service, refrigerator repair, microwave oven repair, TV repair service, dishwasher repair, doorstep appliance repair, appliance repair near me",
 };
 
 // Copyright
 export const COPYRIGHT = {
 	year: new Date().getFullYear(),
-	text: "Home appliance repair service center | All rights reserved.",
+	text: " All rights reserved.",
 	disclaimer:
 		"We are Not Authorised Service Centre. we provide private services and we deal only in Out of warranty cases. This Website and Domain Name has No Relation With Any Company.",
 };

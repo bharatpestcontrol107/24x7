@@ -2,8 +2,31 @@
 
 import { Wrench, Zap, Users, IndianRupee } from "lucide-react";
 import { COMPANY_INFO } from "@/lib/constants";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 export default function About() {
+	const [isVisible, setIsVisible] = useState(false);
+	const sectionRef = useRef<HTMLElement>(null);
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						setIsVisible(true);
+					}
+				});
+			},
+			{ threshold: 0.1 },
+		);
+
+		if (sectionRef.current) {
+			observer.observe(sectionRef.current);
+		}
+
+		return () => observer.disconnect();
+	}, []);
 	const features = [
 		{
 			icon: Wrench,
@@ -32,7 +55,7 @@ export default function About() {
 	const services = COMPANY_INFO.services;
 
 	return (
-		<section id="about" className="py-20">
+		<section id="about" className="py-20" ref={sectionRef}>
 			<style>{`
         @keyframes fadeInUp {
           from {
@@ -118,14 +141,14 @@ export default function About() {
 
 			<div className="container mx-auto px-4">
 				<div className="text-center mb-16 animate-fade-in-up">
-					<h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+					<h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
 						About{" "}
 						<span className="text-[#ca2929]">
 							{COMPANY_INFO.name.toUpperCase()}
 						</span>
 					</h2>
 					<div className="w-24 h-1 bg-red-500 mx-auto mb-8"></div>
-					<p className="text-xl text-gray-600 max-w-5xl mx-auto leading-relaxed">
+					<p className="text-lg text-gray-600 max-w-5xl mx-auto leading-relaxed">
 						{COMPANY_INFO.name} provides reliable home appliance repair services
 						with convenient doorstep support. We repair all major household
 						appliances and focus on quick fault detection, quality replacement
@@ -138,10 +161,12 @@ export default function About() {
 					<div className="animate-fade-in-left">
 						<div className="relative">
 							<div className="absolute inset-0 bg-linear-to-r from-red-400 to-[#ca2929] transform rotate-3"></div>
-							<img
-								src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=compress&cs=tinysrgb&w=800"
+							<Image
+								src="/images/about_us.png"
 								alt="Appliance Repair"
 								className="relative w-full h-80 object-cover shadow-xl"
+								height={320}
+								width={480}
 							/>
 						</div>
 					</div>
