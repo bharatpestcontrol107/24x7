@@ -211,7 +211,7 @@ export default function Contact() {
 								</div>
 							</a>
 							{/* Location */}
-							<div className="flex items-start gap-4">
+							{/* <div className="flex items-start gap-4">
 								<div className="w-12 h-12 border-2 border-red-300 flex items-center justify-center shrink-0 rounded-full">
 									<svg
 										className="w-5 h-5 text-[#ca2929]"
@@ -240,7 +240,7 @@ export default function Contact() {
 										{COMPANY_INFO.address.address}
 									</p>
 								</div>
-							</div>
+							</div> */}
 
 							{/* Schedule */}
 							<div className="flex items-start gap-4">

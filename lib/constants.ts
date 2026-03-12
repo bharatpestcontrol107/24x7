@@ -13,7 +13,7 @@ export const COMPANY_INFO = {
 
 	// Address
 	address: {
-		address: "Mumbai, Maharashtra, India",
+		address: "Maharashtra, India",
 	},
 
 	// Business Hours

@@ -170,7 +170,7 @@ export default function Navbar({ variant = "home" }: NavbarProps) {
 						</Link>
 
 						<div className="flex items-center gap-2 text-white/80">
-							<div className="flex items-start gap-2">
+							{/* <div className="flex items-start gap-2">
 								<svg
 									className={`w-8 h-8 ${iconClass} mt-0.5 shrink-0`}
 									fill="none"
@@ -199,7 +199,7 @@ export default function Navbar({ variant = "home" }: NavbarProps) {
 										{COMPANY_INFO.address.address}
 									</div>
 								</div>
-							</div>
+							</div> */}
 							<Link
 								href={`mailto:${COMPANY_INFO.email}`}
 								className="flex items-start gap-2 hover:opacity-80 transition-opacity">
